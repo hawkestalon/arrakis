@@ -42,15 +42,11 @@ function connectToDb() {
     return __awaiter(this, void 0, void 0, function () {
         var client;
         return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    client = new ts_postgres_1.Client();
-                    return [4 /*yield*/, client.connect()];
-                case 1:
-                    _a.sent();
-                    console.log('Client connected to database...');
-                    return [2 /*return*/];
-            }
+            console.log('starting connection');
+            client = new ts_postgres_1.Client({ 'host': 'localhost', 'database': 'arrakis' });
+            console.log(client);
+            client.connect().then(function () { console.log('connection complete'); });
+            return [2 /*return*/];
         });
     });
 }

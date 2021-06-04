@@ -1,9 +1,9 @@
-import { Client } from 'ts-postgres';
+import { Client, Connect } from 'ts-postgres';
 
-async function connectToDb() {
-    const client = new Client();
-    await client.connect();
-    console.log('Client connected to database...');
+async function connectToDb(): Promise<void> {
+    console.log('starting connection');
+    const client = new Client({'host': 'localhost', 'database': 'arrakis'});
+    client.connect().then(() => {console.log('connection complete')});
 }
 
 export {
