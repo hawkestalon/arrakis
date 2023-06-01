@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon",
+    "dev": "nodemon",
     "build": "tsc --build",
     "db:up": "docker-compose -p black-stone -f docker/docker-compose.yaml up -d"
   },
@@ -13,7 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "fastify": "^4.15.0",
-    "knex": "^2.4.2"
+    "knex": "^2.4.2",
+    "pg": "^8.11.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.13",
